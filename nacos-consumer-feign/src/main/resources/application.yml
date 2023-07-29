@@ -1,0 +1,9 @@
+server:
+  port: 9529
+spring:
+  application:
+    name: nacos-feign
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.201.218.10:8508
