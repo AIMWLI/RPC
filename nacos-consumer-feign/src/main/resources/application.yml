@@ -5,5 +5,21 @@ spring:
     name: nacos-feign
   cloud:
     nacos:
+      username: nacos
+      password: nacos
+      server-addr: 10.201.218.10:8508
       discovery:
-        server-addr: 10.201.218.10:8508
+        #server-addr: 127.0.0.1:8848
+        server-addr: ${spring.cloud.nacos.server-addr}
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: nacos://${spring.cloud.nacos.server-addr}/?username=${spring.cloud.nacos.username}&password=${spring.cloud.nacos.password}
+#  scan:
+#    base-packages: com.songj.nacosprovider.dubbo
+  protocol:
+    name: dubbo
+    port: 20080
+  provider:
+    timeout: 5000
