@@ -21,6 +21,12 @@ import javax.annotation.Resource;
 public class NacosConsumerFeignApplication {
 
     public static void main(String[] args) {
+        // Spring Webflux方式, 需要用WebClient.Builder
+//        SpringApplication application = new SpringApplication(NacosConsumerFeignApplication.class);
+//        application.setWebApplicationType(WebApplicationType.REACTIVE);
+//        application.run(args);
+
+        // WebMVC方式
         SpringApplication.run(NacosConsumerFeignApplication.class, args);
     }
 
@@ -46,7 +52,6 @@ public class NacosConsumerFeignApplication {
         return webClientBuilder.build().get().uri("http://nacos-provider/ping").retrieve().bodyToMono(String.class);
     }
 
-
     @Bean
     @LoadBalanced //开启负载均衡
     public RestTemplate restTemplate() {
@@ -65,6 +70,5 @@ public class NacosConsumerFeignApplication {
 
     @Resource
     private WebClient.Builder webClientBuilder;
-
 
 }

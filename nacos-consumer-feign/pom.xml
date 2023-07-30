@@ -20,22 +20,31 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
         <!-- spring cloud openfeign依赖 springboot2.4.2默认集成openfeign3.0.1,存在CVE-2021-22044、CVE-2016-1000027漏洞，仅做演示，生产环境请注意-->
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign/3.0.1-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
         <!-- 负载均衡 -->
         <!--  仅做演示，缺省配置，如需自定义请参考https://blog.csdn.net/feiying0canglang/article/details/126994250-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
